@@ -29,6 +29,8 @@ main {
 	padding-block: 2.5rem;
 }
 
+/* Top / Players & Timer */
+
 .players-and-timer {
 	display: flex;
 	justify-content: center;
@@ -67,6 +69,8 @@ main {
 	font-size: 3.3rem;
 }
 
+/* Middle / Both Hand */
+
 .hand {
 	display: flex;
 	gap: 1rem;
@@ -75,6 +79,8 @@ main {
 .hand__computer {
 	transform: scaleX(-1);
 }
+
+/* Bottom / Choices Buttons */
 
 .choices {
 	display: flex;
