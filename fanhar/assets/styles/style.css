@@ -26,8 +26,7 @@ body {
 
 main {
 	max-width: 80rem;
-	padding-block-start: 7rem;
-	padding-block-end: 2.5rem;
+	padding-block: 2.5rem;
 }
 
 .players-and-timer {
