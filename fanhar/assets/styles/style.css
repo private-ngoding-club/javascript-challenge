@@ -20,9 +20,49 @@ body {
 	color: white;
 	background: linear-gradient(189deg, rgba(10,36,86,1) 33%, rgba(25,45,100,1) 44%);
 	font-family: 'Open Sans', sans-serif;
+	font-size: 1rem;
+	font-weight: 500;
 }
 
 main {
 	padding-block-start: 7rem;
 	padding-block-end: 2.5rem;
+}
+
+.players-and-timer {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 8.2rem;
+	margin-block-end: 5rem;
+	text-align: center;
+}
+
+.player__you,
+.player__computer {
+	font-size: inherit;
+}
+
+.timer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+
+	position: relative;
+}
+
+.timer::after {
+	content: "Until the end of the choice";
+	opacity: 0.4;
+	text-align: center;
+	white-space: nowrap;
+
+	position: absolute;
+	left: 50%;
+	bottom: -2rem;
+	transform: translateX(-50%);
+}
+
+.timer__left {
+	font-size: 3.3rem;
 }
