@@ -66,3 +66,12 @@ main {
 .timer__left {
 	font-size: 3.3rem;
 }
+
+.hand {
+	display: flex;
+	gap: 1rem;
+}
+
+.hand__computer {
+	transform: scaleX(-1);
+}
