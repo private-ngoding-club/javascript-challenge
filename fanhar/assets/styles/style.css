@@ -25,6 +25,7 @@ body {
 }
 
 main {
+	max-width: 80rem;
 	padding-block-start: 7rem;
 	padding-block-end: 2.5rem;
 }
