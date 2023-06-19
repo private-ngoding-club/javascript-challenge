@@ -130,6 +130,6 @@ main {
 	.choice-box-thingy button:hover,
 	.choice-box-thingy button:focus-visible {
 		background-color: transparent;
-		outline: 3px solid hsl(224, 60%, 50%);
+		outline: 0.1875rem solid hsl(224, 60%, 50%);
 	}
 }
