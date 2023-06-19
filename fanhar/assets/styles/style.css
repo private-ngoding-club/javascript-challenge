@@ -97,7 +97,7 @@ main {
 
 .choices {
 	display: flex;
-	margin-block-start: 0.5rem;
+	margin-block-start: 1.3rem;
 	padding-inline: 14rem;
 }
 
