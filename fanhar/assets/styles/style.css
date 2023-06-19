@@ -21,3 +21,8 @@ body {
 	background: linear-gradient(189deg, rgba(10,36,86,1) 33%, rgba(25,45,100,1) 44%);
 	font-family: 'Open Sans', sans-serif;
 }
+
+main {
+	padding-block-start: 7rem;
+	padding-block-end: 2.5rem;
+}
