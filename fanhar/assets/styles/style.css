@@ -75,3 +75,55 @@ main {
 .hand__computer {
 	transform: scaleX(-1);
 }
+
+.choices {
+	display: flex;
+	margin-block-start: 0.5rem;
+	padding-inline: 15rem;
+}
+
+.choices[data-turn="you"] { justify-content: flex-start; }
+.choices[data-turn="computer"] { justify-content: flex-end; }
+
+.choice-box-thingy {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 0.5rem;
+	background: hsl(224, 60%, 28%);
+	max-width: 12.5rem;
+	padding: 0.5rem;
+}
+
+.choice-box-thingy button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	color: inherit;
+	background: hsl(224, 60%, 35%);
+	border: none;
+	border-radius: 0.5rem;
+	padding: 0.75rem;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	cursor: pointer;
+}
+
+.choice-box-thingy svg {
+	max-width: 1.5rem;
+	fill: currentColor;
+}
+
+.choices__scissors svg {
+	transform: rotate(-90deg) scaleX(-1);
+}
+
+@media (hover:hover) {
+	.choice-box-thingy button:hover,
+	.choice-box-thingy button:focus-visible {
+		background-color: transparent;
+		outline: 3px solid hsl(224, 60%, 50%);
+	}
+}
