@@ -1,3 +1,10 @@
+:root {
+	--font-open-sans: "Open Sans", sans-serif;
+
+	--white: 0, 0%, 100%;
+	--blue: 224, 60%; /* Make sure to put the hsl light value if you use it. */
+}
+
 *, *::before, *::after {
 	margin: 0;
 	padding: 0;
@@ -13,14 +20,20 @@ svg {
 }
 
 body {
+	--font-primary: var(--font-open-sans);
+	--font-size-primary: 1rem;
+
+	--color-primary: hsl(var(--white));
+	--color-secondary: var(--blue); /* Make sure to put the hsl light value if you use it. */
+
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	min-height: 100vh;
-	color: white;
+	color: var(--color-primary);
 	background: linear-gradient(180deg, rgba(10,36,86,1) 33%, rgba(25,45,100,1) 44%);
-	font-family: 'Open Sans', sans-serif;
-	font-size: 1rem;
+	font-family: var(--font-primary);
+	font-size: var(--font-size-primary);
 	font-weight: 500;
 }
 
@@ -96,7 +109,7 @@ main {
 	flex-direction: column;
 	width: 100%;
 	gap: 0.5rem;
-	background: hsl(224, 60%, 28%);
+	background: hsl(var(--color-secondary), 28%);
 	max-width: 12.5rem;
 	padding: 0.5rem;
 }
@@ -107,7 +120,7 @@ main {
 	align-items: center;
 	gap: 0.5rem;
 	color: inherit;
-	background: hsl(224, 60%, 35%);
+	background: hsl(var(--color-secondary), 35%);
 	border: none;
 	border-radius: 0.5rem;
 	padding: 0.75rem;
@@ -130,6 +143,6 @@ main {
 	.choice-box-thingy button:hover,
 	.choice-box-thingy button:focus-visible {
 		background-color: transparent;
-		outline: 0.1875rem solid hsl(224, 60%, 50%);
+		outline: 0.1875rem solid hsl(var(--color-secondary), 50%);
 	}
 }
