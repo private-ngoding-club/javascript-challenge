@@ -97,12 +97,12 @@ main {
 
 .choices {
 	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
 	margin-block-start: 1.3rem;
-	padding-inline: 14rem;
+	padding-inline-start: 14rem;
+	padding-inline-end: 6rem;
 }
-
-.choices[data-turn="you"] { justify-content: flex-start; }
-.choices[data-turn="computer"] { justify-content: flex-end; }
 
 .choice-box-thingy {
 	display: flex;
@@ -146,3 +146,11 @@ main {
 		outline: 0.1875rem solid hsl(var(--color-secondary), 50%);
 	}
 }
+
+.choice__opponent-message {
+	font-size: 1.125rem;
+	opacity: 0.5;
+}
+
+.choice__opponent-message[data-choosing="true"] { display: block; }
+.choice__opponent-message[data-choosing="false"] { display: none; }
