@@ -85,7 +85,7 @@ main {
 .choices {
 	display: flex;
 	margin-block-start: 0.5rem;
-	padding-inline: 15rem;
+	padding-inline: 14rem;
 }
 
 .choices[data-turn="you"] { justify-content: flex-start; }
