@@ -105,7 +105,7 @@ main {
 	padding-inline-end: 6rem;
 }
 
-.choice-box-thingy {
+.choice__box-thingy {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
@@ -115,7 +115,7 @@ main {
 	padding: 0.5rem;
 }
 
-.choice-box-thingy button {
+.choice__box-thingy button {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -131,7 +131,7 @@ main {
 	cursor: pointer;
 }
 
-.choice-box-thingy svg {
+.choice__box-thingy svg {
 	max-width: 1.5rem;
 	fill: currentColor;
 }
@@ -155,9 +155,9 @@ main {
 }
 
 @media (hover:hover) {
-	.choice-box-thingy button:hover,
-	.choice-box-thingy button:focus-visible,
-	.choice-box-thingy button[data-chosen="true"] {
+	.choice__box-thingy button:hover,
+	.choice__box-thingy button:focus-visible,
+	.choice__box-thingy button[data-chosen="true"] {
 		background-color: transparent;
 		outline: 0.1875rem solid hsl(var(--color-secondary), 50%);
 	}
