@@ -140,6 +140,14 @@ main {
 	transform: rotate(-90deg) scaleX(-1);
 }
 
+.choice__opponent-message {
+	font-size: 1.125rem;
+	opacity: 0.5;
+}
+
+.choice__opponent-message[data-choosing="true"] { visibility: visible; }
+.choice__opponent-message[data-choosing="false"] { visibility: hidden; }
+
 @media (max-width: 53.125rem) {
 	.players-and-timer {
 		padding-inline: 3rem;
@@ -162,11 +170,3 @@ main {
 		outline: 0.1875rem solid hsl(var(--color-secondary), 50%);
 	}
 }
-
-.choice__opponent-message {
-	font-size: 1.125rem;
-	opacity: 0.5;
-}
-
-.choice__opponent-message[data-choosing="true"] { visibility: visible; }
-.choice__opponent-message[data-choosing="false"] { visibility: hidden; }
