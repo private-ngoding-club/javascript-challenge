@@ -136,7 +136,7 @@ main {
 	fill: currentColor;
 }
 
-.choices__scissors svg {
+.choice__scissors svg {
 	transform: rotate(-90deg) scaleX(-1);
 }
 
