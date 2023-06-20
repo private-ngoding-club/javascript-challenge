@@ -141,7 +141,8 @@ main {
 
 @media (hover:hover) {
 	.choice-box-thingy button:hover,
-	.choice-box-thingy button:focus-visible {
+	.choice-box-thingy button:focus-visible,
+	.choice-box-thingy button[data-chosen="true"] {
 		background-color: transparent;
 		outline: 0.1875rem solid hsl(var(--color-secondary), 50%);
 	}
