@@ -168,5 +168,5 @@ main {
 	opacity: 0.5;
 }
 
-.choice__opponent-message[data-choosing="true"] { display: block; }
-.choice__opponent-message[data-choosing="false"] { display: none; }
+.choice__opponent-message[data-choosing="true"] { visibility: visible; }
+.choice__opponent-message[data-choosing="false"] { visibility: hidden; }
