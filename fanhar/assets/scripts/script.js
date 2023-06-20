@@ -28,24 +28,24 @@ function selectChoice() {
 
 		// Checking your choice.
 		if (yourChoice == computerChoice) { // Draw.
-			gameResult = "Draw. Press to continue.";
+			gameResult = `Your choice: ${yourChoice}\nComputer choice: ${computerChoice}\n\nDraw. Press to continue.`;
 		} else if (yourChoice == "rock") { // Rock.
 			if (computerChoice == "scissors") {
-				gameResult = "You win! Press to continue.";
+				gameResult = `Your choice: ${yourChoice}\nComputer choice: ${computerChoice}\n\nYou win! Press to continue.`;
 			} else if (computerChoice == "paper") {
-				gameResult = "You lose! Press to continue.";
+				gameResult = `Your choice: ${yourChoice}\nComputer choice: ${computerChoice}\n\nYou lose! Press to continue.`;
 			};
 		} else if (yourChoice == "paper") { // Paper.
 			if (computerChoice == "rock") {
-				gameResult = "You win! Press to continue.";
+				gameResult = `Your choice: ${yourChoice}\nComputer choice: ${computerChoice}\n\nYou win! Press to continue.`;
 			} else if (computerChoice == "scissors") {
-				gameResult = "You lose! Press to continue.";
+				gameResult = `Your choice: ${yourChoice}\nComputer choice: ${computerChoice}\n\nYou lose! Press to continue.`;
 			};
 		} else if (yourChoice == "scissors") { // Scissors.
 			if (computerChoice == "paper") {
-				gameResult = "You win! Press to continue.";
-			} else if (computerChoice == "rock") {
-				gameResult = "You lose! Press to continue.";
+				gameResult = `Your choice: ${yourChoice}\nComputer choice: ${computerChoice}\n\nYou win! Press to continue.`;
+			} else if (computerChoice == `rock`) {
+				gameResult = `Your choice: ${yourChoice}\nComputer choice: ${computerChoice}\n\nYou lose! Press to continue.`;
 			};
 		};
 
