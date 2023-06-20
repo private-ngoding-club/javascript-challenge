@@ -11,6 +11,8 @@ function selectChoice() {
 	const yourChoice = this.dataset.choice == "random" ? ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)] : this.dataset.choice; // If choose random, get random choice, if not random, no random choice.
 	console.log("Your choice:", yourChoice);
 	
+	updateHand(yourHand, yourChoice);
+
 	this.dataset.chosen = "true"; // Keep focus on selected button.
 	choiceButtons.forEach((button, index) => button.disabled = true); // Disable button so you can only click once.
 	opponentChoosingMessage.dataset.choosing = "true"; // Show "Opponent is choosing a hand..." message.
@@ -18,6 +20,8 @@ function selectChoice() {
 	setTimeout(() => {
 		const computerChoice = ["rock", "paper", "scissors"][Math.floor(Math.random() * 3)];
 		console.log("Computer choice:", computerChoice);
+
+		updateHand(computerHand, computerChoice);
 
 		// Checking your choice.
 		if (yourChoice == computerChoice) { // Draw.
@@ -50,9 +54,14 @@ function selectChoice() {
 
 			this.dataset.chosen = "false"; // Remove focus state on selected button.
 			choiceButtons.forEach((button, index) => button.disabled = false); // Enable button for next round.
-		}, 1);
+		}, 16);
 
 	}, Math.floor(Math.random() * (5000 - 1800 + 1) + 1800)); // Computer will select after 1.8 to 5 seconds.
+};
+
+function updateHand(hand, choice) {
+	hand.src = `./assets/images/${choice}.png`;
+	hand.alt = `Hand ${choice}.`;
 };
 
 choiceButtons.forEach((button, index) => button.addEventListener("click", selectChoice));
