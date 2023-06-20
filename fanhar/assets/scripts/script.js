@@ -1,3 +1,5 @@
+let gameTimer;
+
 // HTML.
 const timeLeft = document.querySelector(".timer__left");
 const yourHand = document.querySelector(".hand__you img");
@@ -12,6 +14,7 @@ function selectChoice() {
 	console.log("Your choice:", yourChoice);
 	
 	updateHand(yourHand, yourChoice);
+	clearInterval(gameTimer); // Stop timer after clicked.
 
 	this.dataset.chosen = "true"; // Keep focus on selected button.
 	choiceButtons.forEach((button, index) => button.disabled = true); // Disable button so you can only click once.
@@ -54,7 +57,9 @@ function selectChoice() {
 
 			this.dataset.chosen = "false"; // Remove focus state on selected button.
 			choiceButtons.forEach((button, index) => button.disabled = false); // Enable button for next round.
-		}, 16);
+
+			startTimer();
+		}, 20);
 
 	}, Math.floor(Math.random() * (5000 - 1800 + 1) + 1800)); // Computer will select after 1.8 to 5 seconds.
 };
@@ -64,4 +69,26 @@ function updateHand(hand, choice) {
 	hand.alt = `Hand ${choice}.`;
 };
 
+function startTimer() {
+	let seconds = 5;
+
+	timeLeft.innerText = "05 sec";
+
+	gameTimer = setInterval(() => {
+		if (seconds == 0) {
+			clearInterval(gameTimer);
+			choiceButtons[3].click();
+			return;
+		};
+
+		seconds--;
+		timeLeft.innerText = `0${seconds} sec`;
+	}, 1000);
+};
+
 choiceButtons.forEach((button, index) => button.addEventListener("click", selectChoice));
+
+document.addEventListener("DOMContentLoaded", () => {
+	window.alert("Press to play.");
+	startTimer();
+});
