@@ -1,0 +1,172 @@
+:root {
+	--font-open-sans: "Open Sans", sans-serif;
+
+	--white: 0, 0%, 100%;
+	--blue: 224, 60%; /* Make sure to put the hsl light value if you use it. */
+}
+
+*, *::before, *::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+img,
+svg {
+	display: block;
+	height: auto;
+	width: 100%;
+	max-width: 100%;
+}
+
+body {
+	--font-primary: var(--font-open-sans);
+	--font-size-primary: 1rem;
+
+	--color-primary: hsl(var(--white));
+	--color-secondary: var(--blue); /* Make sure to put the hsl light value if you use it. */
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 100vh;
+	color: var(--color-primary);
+	background: linear-gradient(180deg, rgba(10,36,86,1) 33%, rgba(25,45,100,1) 44%);
+	font-family: var(--font-primary);
+	font-size: var(--font-size-primary);
+	font-weight: 500;
+}
+
+main {
+	max-width: 80rem;
+	padding-block: 2.5rem;
+}
+
+/* Top / Players & Timer */
+
+.players-and-timer {
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
+	align-items: center;
+	margin-block-end: 5rem;
+	padding-inline: 8rem;
+	text-align: center;
+}
+
+.player__you,
+.player__computer {
+	font-size: inherit;
+}
+
+.timer {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+
+	position: relative;
+}
+
+.timer::after {
+	content: "Until the end of the choice";
+	opacity: 0.4;
+	text-align: center;
+	white-space: nowrap;
+
+	position: absolute;
+	left: 50%;
+	bottom: -1.8rem;
+	transform: translateX(-50%);
+}
+
+.timer__left {
+	font-size: 3.3rem;
+}
+
+/* Middle / Both Hand */
+
+.hand {
+	display: flex;
+	gap: 1rem;
+}
+
+.hand__computer {
+	transform: scaleX(-1);
+}
+
+/* Bottom / Choices Buttons */
+
+.choices {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	margin-block-start: 1.3rem;
+	padding-inline-start: 14rem;
+	padding-inline-end: 6rem;
+}
+
+.choice__box-thingy {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	gap: 0.5rem;
+	background-color: hsl(var(--color-secondary), 28%);
+	max-width: 12.5rem;
+	padding: 0.5rem;
+}
+
+.choice__box-thingy button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5rem;
+	color: inherit;
+	background-color: hsl(var(--color-secondary), 35%);
+	border: none;
+	border-radius: 0.5rem;
+	padding: 0.75rem;
+	font-family: inherit;
+	font-size: inherit;
+	font-weight: inherit;
+	cursor: pointer;
+}
+
+.choice__box-thingy svg {
+	max-width: 1.5rem;
+	fill: currentColor;
+}
+
+.choice__scissors svg {
+	transform: rotate(-90deg) scaleX(-1);
+}
+
+.choice__opponent-message {
+	font-size: 1.125rem;
+	opacity: 0.5;
+}
+
+.choice__opponent-message[data-choosing="true"] { visibility: visible; }
+.choice__opponent-message[data-choosing="false"] { visibility: hidden; }
+
+@media (max-width: 53.125rem) {
+	.players-and-timer {
+		padding-inline: 3rem;
+	}
+
+	.choices {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		padding-inline: 2rem;
+	}
+}
+
+@media (hover:hover) {
+	.choice__box-thingy button:hover,
+	.choice__box-thingy button:focus-visible,
+	.choice__box-thingy button[data-chosen="true"] {
+		background-color: transparent;
+		outline: 0.1875rem solid hsl(var(--color-secondary), 50%);
+	}
+}
