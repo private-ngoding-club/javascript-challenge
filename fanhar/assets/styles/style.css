@@ -45,11 +45,12 @@ main {
 /* Top / Players & Timer */
 
 .players-and-timer {
-	display: flex;
-	justify-content: center;
+	display: grid;
+	grid-auto-flow: column;
+	grid-auto-columns: 1fr;
 	align-items: center;
-	gap: 8.2rem;
 	margin-block-end: 5rem;
+	padding-inline: 8rem;
 	text-align: center;
 }
 
@@ -137,6 +138,20 @@ main {
 
 .choices__scissors svg {
 	transform: rotate(-90deg) scaleX(-1);
+}
+
+@media (max-width: 53.125rem) {
+	.players-and-timer {
+		padding-inline: 3rem;
+	}
+
+	.choices {
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 1rem;
+		padding-inline: 2rem;
+	}
 }
 
 @media (hover:hover) {
